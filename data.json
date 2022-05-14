@@ -1,0 +1,83 @@
+{
+    "theme": {
+        "default" : true,
+        "describtion": "lorem",
+        "content": [
+            "pirate",
+            "space",
+            "snow",
+            "jungle",
+            "make-friends",
+            "horror"
+        ]
+    }, 
+
+    "genre": {
+        "default" : true,
+        "describtion": "lorem",
+        "content": [
+            "arcade",
+            "action",
+            "stealth",
+            "shooter",
+            "fighting",
+            "survival",
+            "rythm",
+            "battle-royale",
+            "metroidvania",
+            "puzzle",
+            "strategy",
+            "city-builder",
+            "narrative",
+            "tactics",
+            "simulation",
+            "artillery",
+            "tower-defense",
+            "racing",
+            "party"
+        ]
+    },
+
+    "limitation": {
+        "default" : true,
+        "describtion": "lorem",
+        "content": [
+            "with only one button input",
+            "for children",
+            "with a limited inventory",
+            "lasting one minute",
+            "breaking genre conventions",
+            "with two worlds"
+        ]
+    },
+
+    "mechanics": {
+        "default" : true,
+        "describtion": "lorem",
+        "content": [
+            "power-ups",
+            "uncover-the-dark mechanics",
+            "time mechanics",
+            "dodging",
+            "deck-building",
+            "cooperation",
+            "destruction mechanics",
+            "collection mechanics"
+        ]
+    },
+
+    "fantasy": {
+        "default" : false,
+        "describtion": "lorem",
+        "content": [
+            "the player is a magician",
+            "the player is a pirate",
+            "the player is a gardener",
+            "the player is the world",
+            "the player leaves something behind",
+            "the player is an ant",
+            "the player is an photographer",
+            "the player wears a diaper"
+        ]
+    }
+}

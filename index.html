@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <meta charset="utf-8">
+      <title>Lucas Game Idea Generator</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+      <link href="/css/style.css" rel="stylesheet">
+      <link href="/css/helpers.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="d-flex align-items-center vh-100">
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h5>Okay Computer! Please generate me an idea for a game....</h5>
+                </div>
+            </div>
+            <div class="row pt-25">
+                <div class="col d-flex justify-content-center">
+                    <div class="component-bar">
+                        <h3  class="round-button" id="add-new-component-button">+</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-25">
+                <div class="col d-flex justify-content-center generate-button-area">
+                    <div id="generate-button">
+                        <img src="img/6646669_casino_dice_dices_gambling_videogames_icon.svg" alt="generate" width="50" height="50">
+                        <h3>ROLL THE DICE!</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row pt-25">
+                <div class="col">
+                    <h4 id="line"></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex align-items-center vh-100 vw-100 inactive-component-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex justify-content-end">
+                    <ul class="inactive-component-list"></ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex justify-content-end">
+                    <h3 class="round-button" id="close-inactive-component-overlay">x</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"></script>
+      <script src="js/linetyper.js"></script>
+      <script src="js/generator.js"></script>
+  </html>
