@@ -4,16 +4,39 @@
         "describtion": "lorem",
         "content": [
             "pirate",
-            "space",
             "snow",
             "jungle",
             "make-friends",
-            "horror"
+            "horror",
+            "17th century",
+            "adventure",
+            "alchemy",
+            "alien",
+            "architecture",
+            "art",
+            "comic",
+            "cyberpunk",
+            "dinosaurs",
+            "detective",
+            "dragons",
+            "evolution",
+            "farming",
+            "gardening",
+            "geography",
+            "insect",
+            "language",
+            "monster",
+            "music",
+            "ninja",
+            "space",
+            "travel",
+            "vampire",
+            "winter"
         ]
     }, 
 
     "genre": {
-        "default" : true,
+        "default" : false,
         "describtion": "lorem",
         "content": [
             "arcade",
@@ -47,7 +70,8 @@
             "with a limited inventory",
             "lasting one minute",
             "breaking genre conventions",
-            "with two worlds"
+            "with two worlds",
+            "but it's just a loading screen"
         ]
     },
 

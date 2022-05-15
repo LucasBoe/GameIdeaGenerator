@@ -8,7 +8,7 @@ var waitTickTimer = 0;
 var currentLine = "";
 var text = "";
 var state;
-const tickDuration = 20;
+const tickDuration = 15;
 
 var isTyping = false;
 
@@ -55,22 +55,20 @@ function Tick() {
             text = currentLine.dirtySubstringFromCleanLength(0, len);
 
             if (len >= currentLine.length) {
-                setState(states.WaitW);
+                setState(states.Wait);
             }
             break;
 
         case states.Wait:
             isTyping = false;
             break;
-
     }
 
-    var barStr = "|";
-    if (new Date().getTime() / 500 % 2 < 1) {
-        barStr = "<i>|</i>";
-    }
+    if (state != states.Wait)
+        $("#line").html(text + "<i>|</i>");
 
-    $("#line").html(text + barStr);
+    var opacity = (new Date().getTime() / 500 % 2 < 1) ? 0 : 1;
+    $("#line i").css('opacity', opacity);
 }
 
 function setState(newState) {

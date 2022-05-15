@@ -1,161 +1,188 @@
+:root {
+  --main-bg-color: rgb(32,24,47);
+  --yellow: #f1d02c;
+  --green: #1ebd97;
+  --blue: #0793c6;
+  --cyan: #f83f92;
+  --red: #ee3f1d;
+}
+
+body {
+  background: var(--main-bg-color);
+  background: linear-gradient(25deg, #17141d 0%, var(--main-bg-color) 100%);
+  color: white;
+}
+
+h4 {
+  font-weight: 400;
+}
+
+h5 {
+  font-weight: 300;
+}
+
 .round-button {
   font-size: x-large;
   width: 24pt;
   height: 24pt;
   border-radius: 100%;
-  transform: scale(1.25);
-  background-color: black;
-  color: white;
+  transform: scale(1.1);
+  background-color: white;
+  color: var(--main-bg-color);
   cursor: pointer;
   padding: 0px 6pt;
+  transition: all 0.2s ease;
 }
+
+  .round-button:hover {
+    transform: scale(1.35);
+  }
 
 .component-bar {
   display: flex;
-  border: black 1px solid;
+  border: white 1px solid;
   padding: 10pt 12pt;
   border-radius: 100px;
 }
 
   .component-bar h2 {
-    margin: 0 4pt 1pt;
+    margin: 0 4pt;
     font-size: x-large;
-    text-transform: uppercase;
-    border-radius: 100vh;
     padding: 2pt 8pt;
     position: relative;
   }
 
-  .component-bar h2 .remove-component {
-    cursor: pointer;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-  }
+    .component-bar h2 .remove-component {
+      cursor: pointer;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+    }
 
-  .component-bar h2 .remove-component::after {
-    content: "x";
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    background: rgb(255 255 255 / 66%);
-    color: black;
-    text-align: center;
-    text-transform: lowercase;
-    transition: transform 0.25s ease;
-    border-radius: 100vh;
-    visibility: hidden;
-  }
+      .component-bar h2 .remove-component::after {
+        content: "X";
+        position: relative;
+        display: block;
+        height: 100%;
+        background: rgb(32 24 47 / 66%);
+        color: white;
+        text-align: center;
+        transition: all 0.25s ease;
+        opacity: 0;
+        font-size: 0pt;
+        font-weight: 400;
+      }
 
-  .component-bar h2:hover .remove-component::after {
-    visibility: inherit;
-  }
+        .component-bar h2:hover .remove-component::after {
+          opacity: 1;
+          font-size: xx-large;
+        }
 
   .component-bar #add-new-component-button {
-    margin: 0px 0px 0px 8pt;
+    margin: 1pt 0 0 3pt
   }
 
-.generate-button-area #generate-button {
-  color: transparent;
-  transition: color 0.25s ease;
-}
-
-.generate-button-area #generate-button:hover {
-  color: black;
-  transition: color 0.25s ease;
-}
-
-  .generate-button-area #generate-button img {
-    transform: scale(1) rotate(45deg);
-    transition: transform 0.25s ease;
-    cursor: pointer;
+  .generate-button-area #generate-button {
+    color: transparent;
+    transition: color 0.25s ease;
   }
 
-  .generate-button-area #generate-button:hover img {
-      transform: scale(1.25) rotate(225deg);
+    .generate-button-area #generate-button:hover {
+      color: white;
     }
 
-    .generate-button-area h3 {
-      display: inline-block;
-      margin: 4pt 12pt;
-      position: absolute;
-      font-style: italic;
-      pointer-events: none;
+    .generate-button-area #generate-button img {
+      transform: scale(1) rotate(45deg);
+      transition: transform 0.25s ease;
+      cursor: pointer;
     }
+
+      .generate-button-area #generate-button:hover img {
+          transform: scale(1.25) rotate(225deg);
+        }
+
+  .generate-button-area h3 {
+    display: inline-block;
+    margin: 4pt 12pt;
+    position: absolute;
+    font-style: italic;
+    pointer-events: none;
+  }
 
 .inactive-component-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  background: rgb(255 255 255 / 50%);
+  background: rgba(0, 0, 0, 0.5);
   visibility: hidden;
 }
 
-.inactive-component-overlay .inactive-component-list li {
-  list-style: "";
-  text-transform: uppercase;
-  font-size: x-large;
-  color: white;
-  border-radius: 100px;
-  padding: 1pt 15pt 2pt;
-  margin: 4pt 0;
-  width: fit-content;
-  cursor: pointer;
-}
-.inactive-component-overlay .inactive-component-list li::before {
-  content: "+";
-  font-weight: bold;
-  padding-right: 6pt;
+    .inactive-component-overlay li {
+      list-style: "";
+      font-size: large;
+      border-radius: 100px;
+      padding: 1pt 11pt 2pt;
+      margin: 4pt 0;
+      cursor: pointer;
+      text-align: center;
+    }
+
+      .inactive-component-overlay .inactive-component-list ._comp::before {
+        content: "+";
+        font-weight: bold;
+        padding-right: 6pt;
+      }
+
+#line {
+  transition: all 1s ease;
 }
 
-#line i {
-  visibility: hidden;
-}
+  #line i {
+    color: white;
+  }
 
 .hide {
   display: none !important;
 }
 
 .c_theme{
-  color: rgb(137, 135, 0);
+  color: var(--yellow);
 }
 
 .bc_theme{
-  background-color: rgb(137, 135, 0);
+  background-color: var(--yellow);
 }
 
 .c_genre{
-  color: rgb(121, 0, 0);
+  color: var(--green);
 }
 
 .bc_genre{
-  background-color: rgb(121, 0, 0);
+  background-color: var(--green);
 }
 
 .c_fantasy{
-  color: rgb(152, 0, 104);
+  color: var(--red);
 }
 
 .bc_fantasy{
-  background-color: rgb(152, 0, 104);
+  background-color: var(--red);
 }
 
 .c_mechanics{
-  color: rgb(5, 0, 152);
+  color: var(--cyan);
 }
 
 .bc_mechanics{
-  background-color: rgb(5, 0, 152);
+  background-color: var(--cyan);
 }
 
 .c_limitation {
-  color: green;
+  color: var(--blue);
 }
 
 .bc_limitation {
-  background-color: green;
+  background-color: var(--blue);
 }

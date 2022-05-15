@@ -22,7 +22,7 @@ $(() => {
                 activeComponents.push(key);
             }
 
-            $inactive.append("<li class='bc_" + key + " " + inactiveHideClass + "'>" + key + "</li>")
+            $inactive.prepend("<li class='bc_" + key + " " + inactiveHideClass + " _comp'>" + key + "</li>")
             $bar.append("<h2 class='c_" + key + " " + activeHideClass + "' comp='" + key + "'> #" + key + "<span class='remove-component'></span></h2>" );
         });
 
@@ -47,7 +47,7 @@ $(() => {
         });
 
         //add click action to add buttons
-        $(".inactive-component-list li").click((e) => {
+        $(".inactive-component-list ._comp").click((e) => {
             var comp = $(e.target).text();
             activeComponents.push(comp);
             updateComponents(activeComponents, $bar, $inactive);
@@ -98,38 +98,40 @@ function updateComponents(activeList, $bar, $inactive) {
         }
     });
 
-    //$("#add-new-component-button").setActive(!allActive);
+    $("#add-new-component-button").setActive(!allActive);
 }
 
 function generateIdea(data, activeComponents) {
     var text = "A"
 
     if (isValid("theme", activeComponents, data)) {
-        text += " <b class='c_theme'>"+ getRandomEntry(data["theme"]["content"]) + "</b>";
+        text += " <b class='c_theme'>"+ getRandomStringFromArray(data["theme"]["content"]) + "</b>";
     }
 
     if (isValid("genre", activeComponents, data)) {
-        text += " <b class='c_genre'>"+ getRandomEntry(data["genre"]["content"]) + "</b>";
+        text += " <b class='c_genre'>"+ getRandomStringFromArray(data["genre"]["content"]) + "</b>";
     }
         text += " game"
 
     if (isValid("limitation", activeComponents, data)) {
-        text +=  " <b class='c_limitation'>"+ getRandomEntry(data["limitation"]["content"]) + "</b>";
+        text +=  " <b class='c_limitation'>"+ getRandomStringFromArray(data["limitation"]["content"]) + "</b>";
     }
     
     if (isValid("mechanics", activeComponents, data)) {
-        text += " using <b class='c_mechanics'>"+ getRandomEntry(data["mechanics"]["content"]) + "</b>";
+        var r = getRandomStringFromArray(["using","involving", "based on"]);
+        text += " " + r + " <b class='c_mechanics'>"+ getRandomStringFromArray(data["mechanics"]["content"]) + "</b>";
     }
 
     if (isValid("fantasy", activeComponents, data)) {
-        text += " in which <b class='c_fantasy'>"+ getRandomEntry(data["fantasy"]["content"]) + "</b>";
+        text += " in which <b class='c_fantasy'>"+ getRandomStringFromArray(data["fantasy"]["content"]) + "</b>";
     }
 
-    text += "."
+    text += ". "
 
     Type(text);
 }
 
+//check if the component should be used
 function isValid(toCheck, validList, dataToCheck) {
 
     if (dataToCheck[toCheck] == undefined)
@@ -141,7 +143,7 @@ function isValid(toCheck, validList, dataToCheck) {
     return true;
 }
 
-function getRandomEntry(comp) {
+function getRandomStringFromArray(comp) {
     var rand = Math.floor(Math.random()*comp.length);
     return comp[rand];
 }
@@ -149,11 +151,10 @@ function getRandomEntry(comp) {
 //array remove function
 Array.prototype.remove = function(v) { this.splice(this.indexOf(v) == -1 ? this.length : this.indexOf(v), 1); }
 
-/*
-Object.prototype.setActive = function(active) {
+//show / hide function with bool input
+jQuery.prototype.setActive = function(active) {
     if (active)
         $(this).show();
     else
         $(this).hide();
 }
-*/
