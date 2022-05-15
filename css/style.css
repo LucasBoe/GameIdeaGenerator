@@ -103,9 +103,9 @@ h5 {
           transform: scale(1.25) rotate(225deg);
         }
 
-  .generate-button-area h3 {
+  .generate-button-area h5 {
     display: inline-block;
-    margin: 4pt 12pt;
+    margin: 12pt;
     position: absolute;
     font-style: italic;
     pointer-events: none;
